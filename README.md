@@ -40,12 +40,6 @@ The GitHub repository titled "python_geometrical_task" outlines a programming ta
 - **x2D.txt**: A text file that may contain example points for 2D tests.
 - **x3D.txt**: A text file that may contain example points for 3D tests.
 
-### Repository Metrics
-
-- **Stars**: 0
-- **Watchers**: 1
-- **Forks**: 0
-
 ### Additional Information
 
 - **Languages**: Python (100.0%)
