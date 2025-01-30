@@ -10,8 +10,8 @@ class Sphere(GeometricShape):
         if self.radius <= 0:
             raise ValueError("Radius must be positive")
             
-    def area(self) -> float:
-        return 4 * math.pi * self.radius ** 2
+  def area(self) -> float:  # Missing 3D surface area
+            raise NotImplementedError
         
     def volume(self) -> float:
         return (4/3) * math.pi * self.radius ** 3
