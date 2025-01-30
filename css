@@ -2,7 +2,12 @@ project/
 │
 ├── src/
 │   ├── __init__.py
-│   └── your_module.py
-│
+│   ├── shapes/
+│   │   ├── __init__.py
+│   │   ├── base_shape.py
+│   │   ├── circle.py
+│   │   └── cli.py
+│   └── 3d/
+│       ├── __init__.py
 └── tests/
-    └── test_your_module.py
+    └── test_circle.py
