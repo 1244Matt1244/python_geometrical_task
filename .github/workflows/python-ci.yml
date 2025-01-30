@@ -16,8 +16,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install .[dev]  # Installs both package and dev dependencies
+          python -m pip install --upgrade pip setuptools
+          pip install ".[dev]"  # Must use quotes for shell safety
 
       - name: Run linting (flake8)
         run: flake8 src/ --count --max-line-length=88 --statistics
