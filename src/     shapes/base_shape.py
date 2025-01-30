@@ -29,6 +29,5 @@ class BaseShape:
     def area(self) -> float:
         raise NotImplementedError("Subclasses must implement area()")
     
-    def perimeter(self) -> float:
-        raise NotImplementedError("Subclasses must implement perimeter()")
-        })
+   def perimeter(self) -> float:  # Not implemented
+        raise NotImplementedError
