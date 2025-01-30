@@ -3,7 +3,7 @@ import os
 import sys
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
-from shapes.circle import Circle  # ✅ Correct import after modifying sys.path
+from src.shapes.circle import Circle  #
 
 class TestCircle:
     def test_valid_circle(self):
