@@ -1,23 +1,23 @@
-name: Python CI
+import pytest
+import sys
+import os
 
-on: [push, pull_request]
+# Add the src directory to the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Set up Python 3.9
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-      - name: Run tests
-        run: |
-          export PYTHONPATH=$(pwd)/src
-          pytest --cov=src --cov-report=xml
-      - name: Upload coverage
-        uses: codecov/codecov-action@v1
+# Now import the Circle class
+from shapes.circle import Circle
+
+class TestCircle:
+    def test_valid_circle(self):
+        c = Circle(5)
+        assert round(c.area(), 2) == 78.54
+        assert round(c.perimeter(), 2) == 31.42
+        
+    def test_invalid_radius(self):
+        with pytest.raises(ValueError):
+            Circle(-1)
+            
+    def test_zero_radius(self):
+        with pytest.raises(ValueError):
+            Circle(0)
