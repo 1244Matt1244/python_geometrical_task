@@ -2,11 +2,14 @@ from setuptools import setup, find_packages
 
 setup(
     name="geometric_shapes",
-    version="0.1",
+    version="0.3",
+    author="Your Name",
+    author_email="your.email@example.com",
+    description="Advanced geometric shape calculations",
     package_dir={"": "src"},
     packages=find_packages(
         where="src",
-        include=["shapes*", "3d*", "tests*"]
+        include=["shapes*", "shapes.3d*", "shapes.tests*"]
     ),
     install_requires=[
         "numpy>=1.21",
@@ -23,5 +26,6 @@ setup(
     },
     entry_points={
         "console_scripts": ["geoshapes=shapes.cli:main"]
-    }
+    },
+    python_requires=">=3.8",
 )
