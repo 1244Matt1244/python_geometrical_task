@@ -12,7 +12,10 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     package_dir={"": "src"},
-    packages=find_packages(where="src"),
+    packages=find_packages(
+        where="src",
+        include=["*", "tests/*"]
+    ),
     install_requires=[
         "numpy>=1.21,<2.0",
         "matplotlib>=3.5,<4.0",
