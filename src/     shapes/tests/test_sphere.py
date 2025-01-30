@@ -1,7 +1,13 @@
-# tests/test_sphere.py
-def test_sphere_volume():
-    assert Sphere(3).volume() == (4/3) * math.pi * 3**3
+import pytest
+import math
+from src.shapes.sphere import Sphere
 
-def test_invalid_sphere_radius():
+
+def test_sphere_volume():
+    s = Sphere(3)
+    assert s.volume() == (4/3) * math.pi * 3**3
+
+
+def test_negative_radius():
     with pytest.raises(ValueError):
-        Sphere(-1)
+        Sphere(-2)
