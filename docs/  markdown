@@ -1,17 +1,31 @@
 .
 ├── .github/
 │   └── workflows/
-│       └── python.yml
+│       └── python.yml           # Updated workflow
+├── data/                        # Keep data files
+│   ├── points2D.txt
+│   ├── points3D.txt
+│   ├── pointsND.txt
+│   ├── x2D.txt
+│   └── x3D.txt
+├── docs/
+│   ├── markdown/
+│   ├── task.txt
+│   └── test_instruction.txt
+├── scripts/                     # Keep scripts
+│   ├── elementary_code_test0.py
+│   ├── extended_rectangle_or_cuboid.py
+│   └── test1-4.py
 ├── src/
-│   └── shapes/
-│       ├── __init__.py
+│   └── shapes/                  # Package root
+│       ├── 3d/
+│       │   └── __init__.py      # Required
+│       ├── tests/
+│       │   └── __init__.py      # Required
+│       ├── __init__.py          # Required
 │       ├── base_shape.py
 │       ├── circle.py
-│       ├── sphere.py
-│       └── cli.py
-├── tests/
-│   ├── __init__.py
-│   ├── test_circle.py
-│   └── test_sphere.py
-├── setup.py
-└── README.md
+│       ├── cli.py
+│       └── sphere.py
+├── README.md
+└── setup.py                     # Updated config
