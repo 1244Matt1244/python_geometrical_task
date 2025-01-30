@@ -3,33 +3,27 @@ from .circle import Circle
 from .sphere import Sphere
 
 @click.group()
-def cli():
-    """Geometric Shapes Calculator"""
+def main():
+    """Geometric Shapes Calculator (Circle/Sphere)"""
     pass
 
-@click.command()
-def main():
-    click.echo("Hello from shapes CLI!")
+@main.command()
 @click.option("--radius", type=float, required=True, help="Circle radius")
 def circle_area(radius):
-    """Calculate circle area"""
     try:
         circle = Circle(radius)
-        click.echo(f"Area: {circle.area():.2f}")
+        click.echo(f"Circle area: {circle.area():.2f}")
     except ValueError as e:
         click.secho(f"Error: {str(e)}", fg="red")
 
-@cli.command()
-@click.option("--radius", type=float)
-def circle_area(radius):
-    click.echo(Circle(radius).area())
+@main.command()
+@click.option("--radius", type=float, required=True, help="Sphere radius")
 def sphere_volume(radius):
-    """Calculate sphere volume"""
     try:
         sphere = Sphere(radius)
-        click.echo(f"Volume: {sphere.volume():.2f}")
+        click.echo(f"Sphere volume: {sphere.volume():.2f}")
     except ValueError as e:
         click.secho(f"Error: {str(e)}", fg="red")
 
 if __name__ == "__main__":
-    cli()
+    main()
