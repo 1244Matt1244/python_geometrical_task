@@ -24,4 +24,11 @@ class GeometricShape(ABC):
         return (self.name, {
             'area': self.area(),
             'perimeter': self.perimeter()
+
+class BaseShape:
+    def area(self) -> float:
+        raise NotImplementedError("Subclasses must implement area()")
+    
+    def perimeter(self) -> float:
+        raise NotImplementedError("Subclasses must implement perimeter()")
         })
