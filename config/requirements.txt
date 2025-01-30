@@ -1,10 +1,14 @@
 # CLI utilities
-click>=8.1,<9.0  # Allow future minor updates
+click>=8.1,<9.0  # Command-line interface library
 
 # Testing tools
-pytest>=7.2,<8.0  # Allow updates within the major version
-pytest-cov>=4.0,<5.0  # Ensure compatibility but allow minor upgrades
+pytest>=7.2,<8.0  # Testing framework
+pytest-cov>=4.0,<5.0  # Coverage reporting for pytest
 
 # Code quality & static analysis
-mypy>=0.991,<1.0  # Allow updates but keep within stable range
-flake8>=6.0,<7.0  # Allow minor updates for improvements
+mypy>=0.991,<1.0  # Static type checker
+flake8>=6.0,<7.0  # Linting for style guide enforcement
+
+# Package dependencies
+numpy>=1.21,<2.0
+matplotlib>=3.5,<4.0
