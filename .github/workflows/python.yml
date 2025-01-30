@@ -1,24 +1,29 @@
-name: Python CI
+name: Python CI/CD Pipeline
 
 on: [push, pull_request]
 
 jobs:
-  build:
+  quality-checks:
+    name: Code Quality & Tests
     runs-on: ubuntu-latest
+    
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Set up Python 3.12
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-          cache: "pip"  # Add caching
+          cache: 'pip'
+          cache-dependency-path: |
+            setup.py
+            **/requirements*.txt
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install .[dev]  # Install from setup.py
+          pip install .[dev]
 
       - name: Run linting (flake8)
         run: flake8 src/ --count --max-line-length=88 --statistics
@@ -26,12 +31,35 @@ jobs:
       - name: Run type checking (mypy)
         run: mypy src/
 
+      - name: Check formatting (Black)
+        run: black --check src/ tests/
+
       - name: Run tests with coverage
         run: |
-          pytest tests/ --cov=src --cov-report=xml
+          pytest tests/ \
+            --cov=src \
+            --cov-report=xml \
+            --cov-fail-under=80
 
-      - name: Upload coverage report
+      - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: coverage.xml
+          fail_ci_if_error: true
+
+  security-scan:
+    name: Security Analysis
+    runs-on: ubuntu-latest
+    needs: quality-checks
+    if: github.event_name == 'push'  # Optional: Only run on pushes
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run ShiftLeft Scan
+        uses: shiftleftscan/scan-action@master
+        with:
+          output: reports
+          fail-build: true
