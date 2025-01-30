@@ -1,31 +1,78 @@
-Zadatak
+### **Zadatak: Provjera Pravokutnika, Kvadara i Hiperkvadara**  
 
-Napravite program koji će za ulaz primiti 2D koordinate točaka A, B, C i X. Neka se koordinate učitavaju iz datoteke. Program treba:
-1. provjeriti mogu li te tri točke biti vrhovi pravokutnika. Ukoliko ne mogu, program mora kontrolirano prestati s radom te obavijestiti korisnika o pogrešci,
-2. provjeriti nalazi li se točka X unutar pravokutnika ABC te obavijestiti korisnika o rezultatu,
-3. izračunati dijagonalu lika.
+#### **Opis problema**  
+Napišite program koji će učitati **2D koordinate** točaka **A, B, C i X** iz datoteke te izvršiti sljedeće provjere i izračune:  
+1. **Provjera valjanosti pravokutnika** – Program treba utvrditi mogu li zadane tri točke **A, B i C** biti vrhovi pravokutnika. Ako ne mogu, program mora kontrolirano završiti s odgovarajućom porukom o pogrešci.  
+2. **Provjera položaja točke X** – Program treba provjeriti nalazi li se točka **X** unutar pravokutnika **ABC** i prikazati rezultat korisniku.  
+3. **Izračun dijagonale pravokutnika** – Program mora izračunati duljinu dijagonale pravokutnika.  
 
-Dodatak
+---
 
-• ovisno o točkama A, B i C, program treba prepoznati o kojoj se vrsti pravokutnika radi (pravokutnik ili kvadar) te za svoje izvršavanje treba dinamički odrediti koje će se klase ili funkcije pozvati
-• proširite program da moze podržavati unos točaka A, B, C, D i X od kojih svaka ima po 3 dimenzije. Neka program provjerava mogu li točke A, B, C i D biti vrhovi jednog kvadra. Neka provjeri nalazi li se točka X unutar kvadra ABCD. Neka izračuna prostornu dijagonalu.
-• napravite da program radi s arbitrarnim brojem dimenzija sve iz prethodnog zadatka
+#### **Dodatne funkcionalnosti**  
+✔ **Prepoznavanje vrste geometrijskog tijela**  
+- Program treba automatski prepoznati radi li se o **pravokutniku (2D) ili kvadru (3D)** na temelju unesenih točaka.  
+- Dinamički treba odabrati odgovarajuće klase ili funkcije za obradu.  
 
-Primjeri ulaza i izlaza
+✔ **Podrška za 3D koordinate**  
+- Program treba podržavati unos točaka **A, B, C, D i X**, gdje svaka ima **tri dimenzije**.  
+- Provjeriti mogu li točke **A, B, C i D** tvoriti **validan kvadar**.  
+- Odrediti nalazi li se točka **X** unutar kvadra **ABCD**.  
+- Izračunati **prostornu dijagonalu** kvadra.  
 
-Ulaz:
+✔ **Podrška za proizvoljan broj dimenzija**  
+- Program treba biti proširiv za **N-dimenzionalne hiperpravokutnike (hiperkvadre)**.  
+- Provjeriti može li se **N točaka** koristiti kao vrhovi **hiperkvadra**.  
+- Provjeriti nalazi li se točka **X** unutar hiperkvadra.  
+- Izračunati duljinu **hiperdijagonale**.  
+
+---
+
+#### **Primjeri ulaza i izlaza**  
+
+📌 **Primjer 1 (2D pravokutnik)**  
+**Ulaz (datoteka `points2D.txt`)**  
+```
 0, 0
 5, 0
 0, 5
 2, 2
-Izlaz:
-True
+```
+**Izlaz:**  
+```
+✅ Točke mogu tvoriti pravokutnik.
+✅ Točka X se nalazi unutar pravokutnika.
+📏 Dijagonala pravokutnika iznosi: 7.07
+```
 
-Ulaz:
+📌 **Primjer 2 (3D kvadar, nevažeći X)**  
+**Ulaz (datoteka `points3D.txt`)**  
+```
 0, 0, 0
 5, 0, 0
 0, 3, 0
 0, 0, 1
 1, 1, 2
-Izlaz:
-False
+```
+**Izlaz:**  
+```
+✅ Točke mogu tvoriti kvadar.
+❌ Točka X se NE nalazi unutar kvadra.
+📏 Prostorna dijagonala kvadra iznosi: 5.92
+```
+
+📌 **Primjer 3 (N-dimenzijski hiperkvadar)**  
+**Ulaz (`pointsND.txt` za 4D prostor)**  
+```
+0, 0, 0, 0
+5, 0, 0, 0
+0, 3, 0, 0
+0, 0, 1, 0
+0, 0, 0, 2
+1, 1, 1, 1
+```
+**Izlaz:**  
+```
+✅ Točke mogu tvoriti 4D hiperkvadar.
+✅ Točka X se nalazi unutar 4D hiperkvadra.
+📏 Hiperdijagonala iznosi: 6.24
+```
