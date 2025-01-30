@@ -1,13 +1,7 @@
-project/
-│
+python_geometrical_task/
 ├── src/
-│   ├── __init__.py
-│   ├── shapes/
-│   │   ├── __init__.py
-│   │   ├── base_shape.py
-│   │   ├── circle.py
-│   │   └── cli.py
-│   └── 3d/
-│       ├── __init__.py
-└── tests/
-    └── test_circle.py
+│   └── shapes/
+│       └── circle.py
+├── tests/
+│   └── test_circle.py
+└── ...
