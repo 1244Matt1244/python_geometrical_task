@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="geometric_shapes",
+    name="shapes",
     version="0.3",
     author="Your Name",
     author_email="your.email@example.com",
