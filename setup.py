@@ -5,10 +5,10 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="geometric_shapes",
-    version="0.1",
+    version="0.2",
     author="Your Name",
     author_email="your.email@example.com",
-    description="A Python package for working with geometric shapes",
+    description="Advanced geometric shape calculations",
     long_description=long_description,
     long_description_content_type="text/markdown",
     package_dir={"": "src"},
@@ -20,10 +20,10 @@ setup(
     ],
     extras_require={
         "dev": [
-            "mypy>=0.991,<1.0",
-            "flake8>=6.0,<7.0",
             "pytest>=7.2,<8.0",
-            "pytest-cov>=4.0,<5.0"
+            "pytest-cov>=4.0,<5.0",
+            "flake8>=6.0,<7.0",
+            "mypy>=1.0,<2.0"
         ]
     },
     entry_points={
@@ -34,5 +34,5 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires=">=3.7",
+    python_requires=">=3.8",
 )
