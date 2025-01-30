@@ -1,0 +1,5 @@
+# config/requirements-dev.txt
+mypy>=0.991,<1.0
+flake8>=6.0,<7.0
+pytest>=7.2,<8.0
+pytest-cov>=4.0,<5.0
