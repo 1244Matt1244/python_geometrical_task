@@ -18,3 +18,7 @@ class TestCircle:
     def test_zero_radius(self):
         with pytest.raises(ValueError):
             Circle(0)
+
+    def test_negative_radius():
+        with pytest.raises(ValueError):
+            Circle(-5)
