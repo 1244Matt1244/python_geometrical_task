@@ -15,7 +15,8 @@ setup(
     package_dir={"": "src"},
     install_requires=[
         "numpy>=1.21,<2.0",
-        "matplotlib>=3.5,<4.0"
+        "matplotlib>=3.5,<4.0",
+        "click>=8.1,<9.0"
     ],
     extras_require={
         "dev": [
@@ -25,7 +26,9 @@ setup(
             "pytest-cov>=4.0,<5.0"
         ]
     },
-    entry_points={"console_scripts": ["geoshapes=shapes.cli:main"]},
+    entry_points={
+        "console_scripts": ["geoshapes=shapes.cli:main"]
+    },
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
