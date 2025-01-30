@@ -17,8 +17,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip setuptools
-          pip install -e ".[dev]"
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"  # Install in editable mode
 
       - name: Run linting
         run: flake8 src/ --count --max-line-length=88 --statistics
