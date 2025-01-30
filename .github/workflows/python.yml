@@ -13,6 +13,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Debug - List files
+        run: ls -R  # ✅ This will print all files in GitHub Actions
+
       - name: Cache dependencies
         uses: actions/cache@v3
         with:
@@ -24,7 +27,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r config/requirements.txt  # ✅ Fix path if needed
+          pip install -r config/requirements.txt  # ✅ Adjust path if needed
           pip install pytest pytest-cov
 
       - name: Run tests
