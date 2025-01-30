@@ -2,11 +2,8 @@ import pytest
 import sys
 import os
 
-# Add the src directory to the Python path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
-
-# tests/test_circle.py
-from shapes.circle import Circle  # Remove "src." from the import
+from shapes.circle import Circle  # ✅ Correct import
 
 class TestCircle:
     def test_valid_circle(self):
