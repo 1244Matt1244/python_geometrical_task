@@ -25,7 +25,7 @@ setup(
         ]
     },
     entry_points={
-        "console_scripts": ["geoshapes=geometric_shapes.cli:main"]  # Fixed path
+        "console_scripts": ["geoshapes=shapes.cli:main"]  # Fixed path
     },
     python_requires=">=3.8",
     classifiers=[  # Add relevant classifiers
