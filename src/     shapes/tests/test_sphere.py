@@ -4,8 +4,8 @@ from src.shapes.sphere import Sphere
 
 
 def test_sphere_volume():
-    s = Sphere(3)
-    assert s.volume() == (4/3) * math.pi * 3**3
+    sphere = Sphere(3)
+    assert sphere.volume() == (4/3) * math.pi * 3**3
 
 
 def test_negative_radius():
