@@ -7,7 +7,10 @@ def cli():
     """Geometric Shapes Calculator"""
     pass
 
-@cli.command()
+@click.command()
+def main():
+    """CLI for geometric calculations"""
+    click.echo("Hello from shapes CLI!")
 @click.option("--radius", type=float, required=True, help="Circle radius")
 def circle_area(radius):
     """Calculate circle area"""
