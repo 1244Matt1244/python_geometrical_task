@@ -1,60 +1,86 @@
-1. Test za 2D pravokutnik:
-Točke: (0, 0), (5, 0), (0, 5), (5, 5)
-X: (2, 2)
-Očekivani rezultat: Točka X se nalazi unutar pravokutnika. Dijagonala lika je 7.07.
+### 1. Test za 2D pravokutnik:
+**Točke:** (0, 0), (5, 0), (0, 5), (5, 5)  
+**X:** (2, 2)  
+**Očekivani rezultat:** Točka X se nalazi unutar pravokutnika. Dijagonala lika je 7.07.
 
-2. Test za 2D pravokutnik gdje X nije unutar pravokutnika:
-Točke: (0, 0), (5, 0), (0, 5), (5, 5)
-X: (6, 6)
-Očekivani rezultat: Točka X se ne nalazi unutar pravokutnika. Dijagonala lika je 7.07.
+---
 
-3.Test za 3D kvadar:
-Točke: (0, 0, 0), (5, 0, 0), (0, 3, 0), (0, 0, 1), (5, 3, 0), (5, 0, 1), (0, 3, 1), (5, 3, 1)
-X: (2, 1, 0.5)
-Očekivani rezultat: Točka X se nalazi unutar kvadra. Prostorna dijagonala je 5.92.
+### 2. Test za 2D pravokutnik gdje X nije unutar pravokutnika:
+**Točke:** (0, 0), (5, 0), (0, 5), (5, 5)  
+**X:** (6, 6)  
+**Očekivani rezultat:** Točka X se ne nalazi unutar pravokutnika. Dijagonala lika je 7.07.
 
-4. Test za 3D kvadar gdje X nije unutar kvadra:
-Točke: (0, 0, 0), (5, 0, 0), (0, 3, 0), (0, 0, 1), (5, 3, 0), (5, 0, 1), (0, 3, 1), (5, 3, 1)
-X: (6, 4, 2)
-Očekivani rezultat: Točka X se ne nalazi unutar kvadra. Prostorna dijagonala je 5.92. 
+---
 
+### 3. Test za 3D kvadar:
+**Točke:** (0, 0, 0), (5, 0, 0), (0, 3, 0), (0, 0, 1), (5, 3, 0), (5, 0, 1), (0, 3, 1), (5, 3, 1)  
+**X:** (2, 1, 0.5)  
+**Očekivani rezultat:** Točka X se nalazi unutar kvadra. Prostorna dijagonala je 5.92.
 
-# Izračunajmo dijagonalu za dane točke koristeći Pitagorin teorem.
+---
 
-Za 2D slučaj (pravokutnik):
-- Točke: (0, 0), (5, 0), (0, 5), i X = (2, 2)
-- Stranice pravokutnika su 5 jedinica (udaljenost između (0, 0) i (5, 0)) i 5 jedinica (udaljenost između (0, 0) i (0, 5)).
-- Koristeći Pitagorin teorem, dijagonala je $$\sqrt{5^2 + 5^2} = \sqrt{50} \approx 7.07$$.
+### 4. Test za 3D kvadar gdje X nije unutar kvadra:
+**Točke:** (0, 0, 0), (5, 0, 0), (0, 3, 0), (0, 0, 1), (5, 3, 0), (5, 0, 1), (0, 3, 1), (5, 3, 1)  
+**X:** (6, 4, 2)  
+**Očekivani rezultat:** Točka X se ne nalazi unutar kvadra. Prostorna dijagonala je 5.92.
 
-Za 3D slučaj (kvadar):
-- Točke: (0, 0, 0), (5, 0, 0), (0, 3, 0), (0, 0, 1), i X = (1, 1, 2)
-- Rubovi kvadra su 5 jedinica (udaljenost između (0, 0, 0) i (5, 0, 0)), 3 jedinice (udaljenost između (0, 0, 0) i (0, 3, 0)), i 1 jedinica (udaljenost između (0, 0, 0) i (0, 0, 1)).
-- Koristeći Pitagorin teorem, dijagonala je $$\sqrt{5^2 + 3^2 + 1^2} = \sqrt{35} \approx 5.92$$.
+---
 
+### Izračun dijagonale za dane točke koristeći Pitagorin teorem:
 
-# Zadatak
+#### Za 2D slučaj (pravokutnik):
+**Točke:** (0, 0), (5, 0), (0, 5), i X = (2, 2)  
+Stranice pravokutnika su 5 jedinica (udaljenost između (0, 0) i (5, 0)) i 5 jedinica (udaljenost između (0, 0) i (0, 5)).  
+Koristeći Pitagorin teorem, dijagonala je:
+\[
+\text{dijagonala} = \sqrt{5^2 + 5^2} = \sqrt{50} \approx 7.07
+\]
 
-Koordinate točaka za 2D:
-2, 2
+#### Za 3D slučaj (kvadar):
+**Točke:** (0, 0, 0), (5, 0, 0), (0, 3, 0), (0, 0, 1), i X = (1, 1, 2)  
+Rubovi kvadra su 5 jedinica (udaljenost između (0, 0, 0) i (5, 0, 0)), 3 jedinice (udaljenost između (0, 0, 0) i (0, 3, 0)), i 1 jedinica (udaljenost između (0, 0, 0) i (0, 0, 1)).  
+Koristeći Pitagorin teorem, dijagonala je:
+\[
+\text{dijagonala} = \sqrt{5^2 + 3^2 + 1^2} = \sqrt{35} \approx 5.92
+\]
 
-Koordinate točaka za 3D:
-1, 1, 2
+---
 
-Primjeri ulaza i izlaza
+### Zadatak
 
-Ulaz za 2d case(rectangle):
+**Koordinate točaka za 2D:**  
+X = (2, 2)
+
+**Koordinate točaka za 3D:**  
+X = (1, 1, 2)
+
+---
+
+### Primjeri ulaza i izlaza
+
+**Ulaz za 2D slučaj (pravokutnik):**
+```
 0, 0
 5, 0
 0, 5
-X=(2, 2)
-Izlaz:
+X = (2, 2)
+```
+**Izlaz:**
+```
 True
+```
 
-Ulaz za 3d case(cuboid):
+---
+
+**Ulaz za 3D slučaj (kvadar):**
+```
 0, 0, 0
 5, 0, 0
 0, 3, 0
 0, 0, 1
-X=(1, 1, 2)
-Izlaz:
+X = (1, 1, 2)
+```
+**Izlaz:**
+```
 False
+```
