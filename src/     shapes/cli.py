@@ -20,7 +20,9 @@ def circle_area(radius):
         click.secho(f"Error: {str(e)}", fg="red")
 
 @cli.command()
-@click.option("--radius", type=float, required=True, help="Sphere radius")
+@click.option("--radius", type=float)
+def circle_area(radius):
+    click.echo(Circle(radius).area())
 def sphere_volume(radius):
     """Calculate sphere volume"""
     try:
