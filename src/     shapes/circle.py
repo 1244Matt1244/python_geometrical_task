@@ -21,3 +21,12 @@ class TestCircle:
     def test_zero_radius(self):
         with pytest.raises(ValueError):
             Circle(0)  # ✅ Expecting an error for zero radius
+
+class Circle(BaseShape):
+    def __init__(self, radius: float):
+        if radius <= 0:
+            raise ValueError("Radius must be positive")
+        self.radius = radius
+    
+    def area(self) -> float:
+        return math.pi * self.radius ** 2
