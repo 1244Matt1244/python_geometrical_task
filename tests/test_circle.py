@@ -1,9 +1,9 @@
 import pytest
-import sys
 import os
+import sys
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
-from shapes.circle import Circle  # ✅ Correct import
+from shapes.circle import Circle  # ✅ Correct import after modifying sys.path
 
 class TestCircle:
     def test_valid_circle(self):
