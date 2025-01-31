@@ -1,3 +1,4 @@
+# In exceptions.py
 class InvalidDimensionError(ValueError):
-    """Custom exception for invalid geometric dimensions"""
-    pass
+    def __init__(self, message: str) -> None:
+        super().__init__(message)
