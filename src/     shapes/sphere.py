@@ -1,14 +1,15 @@
 import math
-from .base_shape import BaseShape
+from .base_shape import BaseShape3D
+from .exceptions import InvalidDimensionError
 
-
-class Sphere(BaseShape):
+class Sphere(BaseShape3D):
+    """Sphere implementation with surface area and volume calculations"""
     def __init__(self, radius: float):
         if radius <= 0:
-            raise ValueError("Radius must be positive")
+            raise InvalidDimensionError("Radius must be positive")
         self.radius = radius
 
-    def area(self) -> float:
+    def surface_area(self) -> float:
         return 4 * math.pi * self.radius ** 2
 
     def volume(self) -> float:
