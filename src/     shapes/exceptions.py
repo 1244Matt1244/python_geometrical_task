@@ -1,2 +1,3 @@
 class InvalidDimensionError(ValueError):
-    """Raised when invalid dimensions are provided"""
+    """Custom exception for invalid geometric dimensions"""
+    pass
