@@ -1,26 +1,19 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="geometric_shapes",
-    version="1.0.2",
-    description="Python package for calculating geometric properties",
-    package_dir={"": "src"},
-    packages=find_packages(where="src"),
+    name="your_project_name",
+    version="0.1.0",
+    packages=find_packages(),
     install_requires=[
-        "click>=8.1.0",
-        "numpy>=1.21.0",
-        "matplotlib>=3.5.0"
+        # Your dependencies here
     ],
     extras_require={
-        "test": [
-            "pytest>=7.0.0",
-            "pytest-cov>=4.0.0",
-            "flake8>=6.0.0",
-            "mypy>=1.0.0"
+        "dev": [
+            "pytest",
+            "pre-commit",
+            "mypy",
+            "sphinx"
         ]
     },
-    entry_points={
-        "console_scripts": ["geoshapes=geometric_shapes.cli:main"]
-    },
-    python_requires=">=3.8, <3.13",  # Adjust this to the minimum and maximum Python version you want to support
+    python_requires=">=3.8, <3.13"  # Adjust this to the minimum and maximum Python version you want to support
 )
