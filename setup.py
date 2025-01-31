@@ -22,5 +22,5 @@ setup(
     entry_points={
         "console_scripts": ["geoshapes=shapes.cli:main"]
     },
-    python_requires=">=3.8",
+    python_requires=">=latest",
 )
