@@ -22,5 +22,5 @@ setup(
     entry_points={
         "console_scripts": ["geoshapes=geometric_shapes.cli:main"]
     },
-    python_requires=">=3.8", "3.9", "3.10", "3.11", "3.12"],  # Adjust this to the minimum Python version you want to support
+    python_requires=">=3.8, <3.13",  # Adjust this to the minimum and maximum Python version you want to support
 )
