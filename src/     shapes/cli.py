@@ -1,33 +1,29 @@
 import click
 from .circle import Circle
 from .sphere import Sphere
-
+from .exceptions import InvalidDimensionError
 
 @click.group()
 def main():
-    """Geometric Shapes Calculator"""
+    """Geometric Shapes CLI Calculator"""
     pass
 
-
 @main.command()
-@click.option("--radius", type=float, required=True)
+@click.option('--radius', type=float, required=True, help='Radius of the circle')
 def circle_area(radius):
+    """Calculate circle area"""
     try:
-        circle = Circle(radius)
-        click.echo(f"Area: {circle.area():.2f}")
-    except ValueError as e:
-        click.secho(f"Error: {str(e)}", fg="red")
-
+        c = Circle(radius)
+        click.echo(f"Area: {c.area():.2f}")
+    except InvalidDimensionError as e:
+        click.secho(f"Error: {str(e)}", fg='red')
 
 @main.command()
-@click.option("--radius", type=float, required=True)
+@click.option('--radius', type=float, required=True, help='Radius of the sphere')
 def sphere_volume(radius):
+    """Calculate sphere volume"""
     try:
-        sphere = Sphere(radius)
-        click.echo(f"Volume: {sphere.volume():.2f}")
-    except ValueError as e:
-        click.secho(f"Error: {str(e)}", fg="red")
-
-
-if __name__ == "__main__":
-    main()
+        s = Sphere(radius)
+        click.echo(f"Volume: {s.volume():.2f}")
+    except InvalidDimensionError as e:
+        click.secho(f"Error: {str(e)}", fg='red')
