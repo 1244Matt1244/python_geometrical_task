@@ -1,9 +1,12 @@
-from shapes.circle import Circle  # Relative import works now
 import pytest
+from shapes.circle import Circle
+from shapes.exceptions import InvalidDimensionError
 
-def test_circle_area():
-    assert Circle(5).area() == 3.141592653589793 * 25
+def test_valid_circle():
+    c = Circle(5)
+    assert c.area() == pytest.approx(78.54, rel=1e-2)
+    assert c.perimeter() == pytest.approx(31.4159, rel=1e-4)
 
-def test_negative_radius():
-    with pytest.raises(ValueError):
+def test_invalid_circle():
+    with pytest.raises(InvalidDimensionError):
         Circle(-2)
