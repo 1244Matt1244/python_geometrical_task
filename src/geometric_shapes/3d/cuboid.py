@@ -6,7 +6,7 @@ class Cuboid(Base3DShape):
         self.height = height
 
     def surface_area(self) -> float:
-        return 2 * (self.length*self.width + self.width*self.height + self.length*self.height)
+        return 2 * (lw + wh + hl)
 
     def volume(self) -> float:
         return self.length * self.width * self.height
