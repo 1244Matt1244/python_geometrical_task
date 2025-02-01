@@ -16,7 +16,7 @@ setup(
             "pytest-cov>=4.0",
             "flake8>=6.0",
             "mypy>=1.0",
-            "sphinx>=7.0"  # Documentation tool; remove if not needed
+            "sphinx>=7.0",  # Documentation tool; remove if not needed
         ]
     },
     python_requires=">=3.8, <3.13",  # Specify the Python versions your project supports
