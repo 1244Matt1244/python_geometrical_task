@@ -1,5 +1,5 @@
 import pytest
-from shapes.sphere import Sphere
+from geometric_shapes.shapes.circle import Circle
 from shapes.exceptions import InvalidDimensionError
 
 def test_valid_sphere():
