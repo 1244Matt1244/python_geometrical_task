@@ -1,12 +1,26 @@
-# Python
+# Python bytecode and caches
 __pycache__/
 *.py[cod]
+*$py.class
+
+# Distribution / packaging
 *.egg-info/
 dist/
 build/
+
+# Coverage reports
 .coverage
 htmlcov/
 
-# Environment
+# Virtual environments
 .env
 venv/
+
+# Pytest cache (optional)
+.pytest_cache/
+
+# MyPy cache (optional)
+.mypy_cache/
+
+# Logs (optional)
+*.log
