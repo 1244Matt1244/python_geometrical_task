@@ -47,3 +47,5 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: coverage.xml  # Upload coverage to Codecov
+          fail_ci_if_error: true
+          verbose: true
