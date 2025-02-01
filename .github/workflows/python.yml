@@ -30,7 +30,7 @@ jobs:
         run: flake8 src/ --count --max-line-length=88 --statistics  # Run linting if needed
 
       - name: Run tests
-        run: pytest -v --cov=geometric_shapes  # Run tests
+        run: pytest -v --cov=src/geometric_shapes --cov-report=xml
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
