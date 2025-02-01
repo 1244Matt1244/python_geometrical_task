@@ -1,5 +1,5 @@
 import pytest
-from shapes.circle import Circle
+from geometric_shapes.shapes.circle import Circle
 from shapes.exceptions import InvalidDimensionError
 
 def test_valid_circle():
