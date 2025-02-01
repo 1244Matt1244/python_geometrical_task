@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="your_project_name",  # Replace with your actual project name
+    name="python_geometrical_task",  # Replace with your actual project name
     version="0.1.0",
     description="A short description of your project",  # Optional but recommended
     author="Your Name",  # Optional: specify the author
