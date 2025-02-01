@@ -9,6 +9,13 @@ def main():
     """Geometric Shapes CLI Calculator"""
     pass
 
+@cli.command()
+@click.option("--input-file", type=click.Path(exists=True))
+def batch_process(input_file: str):
+    """Process multiple shapes from file"""
+    with open(input_file) as f:
+        data = json.load(f)
+        
 @main.command()
 @click.option('--length', type=float, required=True, help='Length of the cuboid')
 @click.option('--width', type=float, required=True, help='Width of the cuboid')
